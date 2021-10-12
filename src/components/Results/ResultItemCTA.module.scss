@@ -1,0 +1,82 @@
+.root {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.info {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+
+  .info_stats_dl,
+  .info_price_dl {
+    margin-bottom: 10px;
+  }
+
+  .info_price_dl {
+    padding-right: 30px;
+  }
+
+  &_stats_dt {
+    color: #818d99;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0;
+  }
+
+  &_stats_dd {
+    font-size: 14px;
+    margin: 2px 0 8px 0;
+    font-weight: bold;
+  }
+
+  &_price_dt {
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+  }
+
+  &_price_dd {
+    color: #41c4ab;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+.checkIcon {
+  color: #41c4ab;
+}
+
+.flexibleBooking {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.flexibleBookingText {
+  font-size: 12px;
+  line-height: 18px;
+  padding-left: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 0;
+}
+
+.ctaButton {
+  color: #fff;
+  font-size: 14px;
+  line-height: 24px;
+  background-color: #0a7bbd;
+  padding: 6px 8px;
+  text-align: center;
+  display: block;
+  border: none;
+  font-weight: 700;
+  border-radius: 3px;
+  &:hover {
+    background-color: #0969a1;
+  }
+  cursor: pointer;
+}
