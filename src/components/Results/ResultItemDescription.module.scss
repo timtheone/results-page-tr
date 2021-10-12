@@ -1,0 +1,25 @@
+.descriptionBlock {
+  display: inline-block;
+  margin: 12px 0 0;
+  line-height: 14px;
+  max-width: 100%;
+  border-top: 1px solid #ebeef2;
+  padding-top: 12px;
+
+  dt {
+    display: inline-block;
+    width: 34%;
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #2c3e50;
+    vertical-align: top;
+  }
+
+  dd {
+    display: inline-block;
+    width: 66%;
+    margin: 0 0 4px;
+    font-size: 12px;
+  }
+}

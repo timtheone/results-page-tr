@@ -1,0 +1,7 @@
+$breakpointSmall: 767px;
+
+@mixin matchSmall {
+  @media screen and (min-width: $breakpointSmall) {
+    @content;
+  }
+}

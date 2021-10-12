@@ -1,0 +1,39 @@
+@import '../../style/media-queries.scss';
+
+.imageBlock {
+  display: flex;
+  flex-direction: column;
+  @include matchSmall {
+    img {
+      max-width: 232px;
+    }
+  }
+}
+
+.viewMapImageWrapper {
+  position: relative;
+  display: none;
+  @include matchSmall {
+    display: block;
+  }
+}
+.viewMapButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  font-size: 11px;
+  line-height: 12px;
+  color: #fff;
+  background-color: #0a7bbd;
+  padding: 6px 8px 6px 22px;
+  border-bottom-left-radius: 3px;
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: left 7px center;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="16px" width="16px"><path d="M10.3 15.96l-4.8-1.92-4.81 1.92A.5.5 0 010 15.5v-13c0-.2.12-.39.31-.46l5-2a.5.5 0 01.39 0l4.8 1.92L15.31.04A.5.5 0 0116 .5v13a.5.5 0 01-.31.46l-5 2a.5.5 0 01-.39 0zM10 2.84l-4-1.6v11.92l4 1.6V2.84zm1 0v11.92l4-1.6V1.24l-4 1.6zm-6-1.6l-4 1.6v11.92l4-1.6V1.24z" fill="%23fff"/></svg>');
+  @include matchSmall {
+    display: inline-block;
+  }
+}
