@@ -1,15 +1,19 @@
 # results-page-tr
-Project bootstrapped with vite
-Linters: ESlint + Prettier
+Project bootstrapped with `Vite`
+
+Linting: `eslint` + `prettier`;
 
 To start project:
 
-First run `yarn install`
+First make sure that node version is correct. Required verstion is specified in `.nvmrc` file (i use nvm for node version managing)
 
-To Start in dev mode: 
+Then
+- run `yarn install`
 
-run `yarn dev`
+To start in dev mode: 
+
+- run `yarn dev`
 
 To build and preview:
 
-run `yarn build && yarn serve`
+- run `yarn build && yarn serve`
