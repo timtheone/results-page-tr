@@ -1,5 +1,3 @@
-import cx from 'classnames'
-
 import IconStar from './IconStar'
 import IconstStarDeactivated from './IconStarDeactivated'
 import IconStarHalf from './IconStarHalf'
@@ -12,8 +10,6 @@ type Props = {
 const StarRating = ({ rating }: Props) => {
   const remainder = rating - Math.floor(rating)
 
-  const renderedRating = rating
-
   return (
     <ul className={styles.root}>
       {Array.from({ length: 5 }).map((cur, index) => (
@@ -23,7 +19,7 @@ const StarRating = ({ rating }: Props) => {
       ))}
       <li>
         <ul className={styles.filled}>
-          {Array.from({ length: Math.floor(renderedRating) }).map((cur, index) => (
+          {Array.from({ length: Math.floor(rating) }).map((cur, index) => (
             <li key={index + 1} className={styles.star}>
               <IconStar key={index} className={styles.star} />
             </li>

@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useQuery } from 'react-query'
 
-import TourData from '../../types/TourData'
 import useIntersectionObserver from '../../hooks/useIntersectionObserver'
+import TourData from '../../types/TourData'
 import ResultItem from './ResultItem'
 import styles from './Results.module.scss'
 
