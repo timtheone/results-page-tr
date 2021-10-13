@@ -5,7 +5,10 @@ Linting: `eslint` + `prettier`;
 
 To start project:
 
-- First run `yarn install`
+First make sure that node version is correct. Required verstion is specified in `.nvmrc` file (i use nvm for node version managing)
+
+Then
+- run `yarn install`
 
 To start in dev mode: 
 
