@@ -5,14 +5,12 @@ export default function sortBy(
   sortField: keyof TourData,
   direction: 'asc' | 'desc' = 'asc'
 ) {
-  const sortedCopy = [...data]
+  const sortedCopy = data.slice(0)
   if (direction === 'asc') {
-    console.log('asc')
     return sortedCopy.sort((a: TourData, b: TourData) =>
       a[sortField] > b[sortField] ? 1 : b[sortField] > a[sortField] ? -1 : 0
     )
   } else {
-    console.log('desc')
     return sortedCopy.sort((a: TourData, b: TourData) =>
       a[sortField] < b[sortField] ? 1 : b[sortField] < a[sortField] ? -1 : 0
     )
