@@ -1,8 +1,11 @@
-import { useRef, useState } from 'react'
+import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { useQuery } from 'react-query'
 
 import useIntersectionObserver from '../../hooks/useIntersectionObserver'
 import TourData from '../../types/TourData'
+import getSortMapping from '../../utils/getSortMapping'
+import sortBy from '../../utils/sortBy'
+import Select from '../Select/Select'
 import ResultItem from './ResultItem'
 import styles from './Results.module.scss'
 
@@ -10,7 +13,6 @@ const getData = async () => {
   const data = await fetch('https://jsonblob.com/api/jsonBlob/892812282795671552')
   return data.json()
 }
-
 /*
     Due to api having duplicates i decided to remove those duplicated keys
     as this is most likely a mistake
@@ -19,6 +21,13 @@ const toDelete = new Set([8392, 6007, 6942])
 
 const Results = () => {
   const query = useQuery('todos', getData)
+  const [tourData, setTourData] = useState<Array<TourData>>([])
+
+  useEffect(() => {
+    if (query.status === 'success') {
+      setTourData(sortBy(query.data, 'price'))
+    }
+  }, [query.status])
   /*
     how many elements should be shown on initial load
   */
@@ -36,6 +45,11 @@ const Results = () => {
     }
   }
 
+  const sort = (e: ChangeEvent<HTMLSelectElement>) => {
+    const mapping = getSortMapping(e.target.value)
+    setTourData(sortBy(query.data, mapping[0], mapping[1]))
+  }
+
   useIntersectionObserver({
     root: null,
     target: anchor,
@@ -44,9 +58,10 @@ const Results = () => {
   })
 
   return (
-    <ul className={styles.root}>
-      {query.status === 'success' &&
-        query.data
+    <>
+      <Select sort={sort} />
+      <ul className={styles.root}>
+        {tourData
           .filter((item: TourData) => !toDelete.has(item.id))
           .slice(0, elementsShown)
           .map((e: TourData) => (
@@ -54,8 +69,9 @@ const Results = () => {
              */
             <ResultItem key={e.id} item={e} className={styles.resultItem} />
           ))}
-      <span ref={anchor}></span>
-    </ul>
+        <span ref={anchor}></span>
+      </ul>
+    </>
   )
 }
 
