@@ -1,5 +1,6 @@
 import TourData from '../../types/TourData'
 import styles from './ResultItemDescription.module.scss'
+import ResultItemDescriptionDetails from './ResultItemDescriptionDetails'
 
 type Props = Pick<
   TourData,
@@ -17,48 +18,20 @@ const ResultItemDescription = ({
   return (
     <>
       <dl className={styles.descriptionBlock}>
-        <dt>Destinations</dt>
-        <dd>
-          {destinations.map((element, index) => (
-            <span style={{ display: 'inline-block' }} key={index}>
-              {element},
-            </span>
-          ))}
-        </dd>
+        <ResultItemDescriptionDetails data={destinations} title={'Destinations'} />
         <dt>Age Range</dt>
         <dd>
-          <span style={{ display: 'inline-block' }}>
+          <span>
             {age_min} to {age_max} year olds
           </span>
         </dd>
-        <dt>Regions</dt>
-        <dd>
-          {regions.map((element, index) => (
-            <span style={{ display: 'inline-block' }} key={index}>
-              {element},
-            </span>
-          ))}
-        </dd>
-        <dt>Travel Style</dt>
-        <dd>
-          {travel_styles.map((element, index) => (
-            <span style={{ display: 'inline-block' }} key={index}>
-              {element},
-            </span>
-          ))}
-        </dd>
-        <dt>Operated In</dt>
-        <dd>
-          {operated_in.map((element, index) => (
-            <span style={{ display: 'inline-block' }} key={index}>
-              {element},
-            </span>
-          ))}
-        </dd>
+        <ResultItemDescriptionDetails data={regions} title={'Regions'} />
+        <ResultItemDescriptionDetails data={travel_styles} title={'Travel Style'} />
+        <ResultItemDescriptionDetails data={operated_in} title={'Operated In'} />
         <dt>Operator</dt>
         <dd>
           {/* There is no operator data coming from api */}
-          <span style={{ display: 'inline-block' }}>Hotspots2c</span>
+          <span>Hotspots2c</span>
         </dd>
       </dl>
     </>

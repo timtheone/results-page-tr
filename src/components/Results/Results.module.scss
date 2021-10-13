@@ -5,10 +5,15 @@
 
 .root {
   padding: 0;
-  max-width: 362px;
   margin: 0 auto;
   list-style-type: none;
+  display: grid;
+  grid-template-columns: auto;
   @include matchSmall {
-    max-width: unset;
+    column-gap: 20px;
+    grid-template-columns: auto auto;
+  }
+  @include matchMedium {
+    grid-template-columns: auto;
   }
 }
